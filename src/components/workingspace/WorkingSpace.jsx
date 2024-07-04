@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const variants = {
   open: { x: "0%" },
-  closed: { x: "-30%" },
+  closed: { x: "-25%" },
 };
 
 function WorkingSpace() {
@@ -17,7 +17,7 @@ function WorkingSpace() {
         variants={variants}
         className="w-full"
       >
-        <Explorer setSideBarOpen={setSideBarOpen} />
+        <Explorer setSideBarOpen={setSideBarOpen} sideBarOpen={sideBarOpen}/>
       </motion.div>
       <Editor />
     </div>

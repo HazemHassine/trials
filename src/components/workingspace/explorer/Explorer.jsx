@@ -9,6 +9,8 @@ import Documents from "./Documents";
 
 function Explorer(props) {
   const setSideBarOpen = props.setSideBarOpen;
+  const sideBarOpen = props.sideBarOpen;
+
   const closeExplorer = () => {
     setSideBarOpen(false);
   };
@@ -16,15 +18,16 @@ function Explorer(props) {
   const getSelected = (newSelected) => {
     setSelectedSpace(newSelected);
   };
+  
   return (
-    <div className="h-screen flex flex-col w-1/4 border-r-2 border-[#D4D4D4] px-6">
+    <div className="flex h-screen flex-col w-1/4 border-r-2 border-[#D4D4D4] px-6">
       <MdTransitEnterexit
         size={30}
         color="#a0a0a0"
-        className="self-end mt-6 cursor-pointer"
+        className={`mt-6 cursor-pointer rotate-45 self-end ${sideBarOpen ? "translate-x-0": "translate-x-16 rotate-[225deg]"}`}
         onClick={() => {
           console.log("clicked");
-          closeExplorer();
+          setSideBarOpen(!sideBarOpen)
         }}
       />
       <div className="flex items-center">

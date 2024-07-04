@@ -16,12 +16,13 @@ const spaces = [
   { key: "FAISAL", label: "Faisal's Space" },
 ];
 
-function DropdownSpaces() {
+function DropdownSpaces(props) {
   const [selected, setSelected] = useState("HAZEM 🍭");
   const changeSelected = (newish) => {
     setSelected(newish);
     console.log(newish); // this will print the selected item key
   };
+  props.getSelected(selected);
   return (
     <div>
       <Dropdown

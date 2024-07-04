@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { IoIosArrowDropdown } from "react-icons/io";
 import { motion } from "framer-motion";
-import SessionItem from "./SessiionItem";
+import SessionItem from "./SessionItem";
 
 function Sessions() {
   const variants = {
@@ -40,7 +40,6 @@ function Sessions() {
           <SessionItem session={session} currID={currID} changeID={changeID}/>
         ))}
       </motion.div>
-      
     </div>
   );
 }

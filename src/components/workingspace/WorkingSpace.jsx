@@ -1,14 +1,27 @@
 import React, { useState } from "react";
 import Explorer from "./explorer/Explorer";
 import Editor from "./editor/Editor";
+import { motion } from "framer-motion";
 
+const variants = {
+  open: { x: "0%" },
+  closed: { x: "-30%" },
+};
 
 function WorkingSpace() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
-  return <div className="text-3xl text-black bg-red-500">
-    <Explorer/>
-    <Editor/>
-  </div>;
+  return (
+    <div className="flex text-black h-full w-screen overflow-hidden">
+      <motion.div
+        animate={sideBarOpen ? "open" : "closed"}
+        variants={variants}
+        className="w-full"
+      >
+        <Explorer setSideBarOpen={setSideBarOpen} />
+      </motion.div>
+      <Editor />
+    </div>
+  );
 }
 
 export default WorkingSpace;

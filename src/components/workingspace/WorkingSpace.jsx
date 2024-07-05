@@ -19,6 +19,7 @@ function WorkingSpace() {
     setWidth("0");
   };
 
+  
   return (
     <div className="flex text-black h-full w-screen overflow-hidden">
       <motion.div
